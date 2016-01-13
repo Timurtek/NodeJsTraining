@@ -1,3 +1,5 @@
+//UDEMY NodeJS Course
+
 //function statement
 
 function greet(){
@@ -24,24 +26,70 @@ var myName = function(){
 var person = {
   firstname: 'Timurtek',
   lastname: 'Bizel',
+  nickname: 'Zorro',
   name: function(){
-    console.log('Hello, '+this.firstname+' '+this.lastname);
+    console.log('Hello, '+person.firstname+' '+person.lastname);
+  },
+  health:{
+    fivePoints:function(){
+      console.log(person.firstname + ' gains 5 health points.');
+    },
+    tenPoints: function(){
+      console.log(person.nickname + ' gains 10 health points.');
+    }
   }
 };
 
-//Function Construction
-//Person first and last name
-function Person(firstname, lastname){
-  this.firstname = firstname;
-  this.lastname = lastname;
+//console.log(person.health.fivePoints());
+
+//function constructor
+function Person(firstname,lastname, nickname){
+   this.firstname = firstname;
+   this.lastname = lastname;
+   this.nickname = nickname;
 }
-//Hello Function attached to the Person function construction
+
 Person.prototype.hello = function(){
-  console.log('Hello, ' + this.firstname + ' ' + this.lastname);
-};
+  console.log('Hello, ' + this.firstname +' '+ this.lastname);
+}
+Person.prototype.healthPoints = function(){
+  console.log(this.nickname + ' gains 10 health points.');
+}
 
-var timurtek = new Person('Timurtek','Bizel');
-var jane = new Person('Jane','Doe');
+var timurtek = new Person('Timurtek','Bizel','Zorro');
+var jane = new Person('Jane', 'Bizel','Moshi');
+var tayfun = new Person('Tayfun', 'Bizel','DiabloIII');
 
-timurtek.hello();
-jane.hello();
+// timurtek.hello();
+// jane.hello();
+// tayfun.hello();
+// /timurtek.healthPoints();
+
+
+
+//Pass by value
+function change(b){
+  //function gets the value and outputs it
+  b=2;
+}
+
+//a is equal to 1
+var a = 1;
+// a passes by as a value to change function. b gets replaced with a which is 1.
+change(a);
+//function change returns a's value
+//console.log(a);
+
+
+//Pass by reference
+function changeObj(d){
+  d.prop1 = function(){};
+  d.prop2 = {};
+}
+
+var c = {};
+c.prop1 = {};
+
+changeObj(c);
+
+console.log(c);
