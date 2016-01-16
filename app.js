@@ -68,28 +68,30 @@ var tayfun = new Person('Tayfun', 'Bizel','DiabloIII');
 
 
 //Pass by value
+
 function change(b){
-  //function gets the value and outputs it
   b=2;
 }
-
-//a is equal to 1
 var a = 1;
-// a passes by as a value to change function. b gets replaced with a which is 1.
 change(a);
-//function change returns a's value
 //console.log(a);
+//pass by reference
 
-
-//Pass by reference
 function changeObj(d){
   d.prop1 = function(){};
   d.prop2 = {};
 }
-
 var c = {};
 c.prop1 = {};
-
 changeObj(c);
+//console.log(c);
 
-console.log(c);
+
+//immidiate function expression
+var lastname = 'Bizel';
+
+(function(){
+  var firstname = 'Timmmy';
+  console.log(firstname+" "+lastname);
+}(lastname));
+//console.log(firstname);
