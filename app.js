@@ -6,20 +6,19 @@ function greet(){
     console.log('Welcome to NodeJS');
 }
 
+
 //functions are first-class
-function logGreeting(fn){
+function runFunc(fn){
     fn();
 }
 
 //function expression
 var myName = function(){
-    console.log('Timurtek');
+    console.log('My name : Timurtek');
 }
 
-//use a function expression on the fly
-// logGreeting(function(){
-//   console.log('Hello Timurtek');
-// });
+runFunc(greet);
+runFunc(myName);
 
 
 //Objects and Object Literals
