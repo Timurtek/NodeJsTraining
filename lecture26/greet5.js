@@ -1,8 +1,14 @@
-//variable and function is protected, there is no way to access it nor change the value of it on returned object because it is not with in it.
-var greeting = "greeetinggsss my precious";
+var greeting = "Greet 5: Hello World";
+var lalala = "Greet 5: bananeeeeeeee";
+
 function greet(){
   console.log(greeting);
 }
+function banane(){
+  console.log(lalala);
+}
+
 module.exports = {
-    greet: greet
-};
+  greetFunc:greet,
+  bananeFunc: banane
+}

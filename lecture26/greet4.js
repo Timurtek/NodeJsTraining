@@ -1,8 +1,9 @@
-function Greet4(){
-  this.greeting = "Greet 4";
+//creating a function constructor
+function  Greetr(greetings){
+  this.greetings = greetings || "Greet4: Hello World!";
   this.greet = function(){
-    console.log(this.greeting);
-  };
+    console.log(this.greetings);
+  }
 }
 
-module.exports = Greet4;
+module.exports = Greetr;

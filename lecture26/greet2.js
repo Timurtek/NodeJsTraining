@@ -1,3 +1,4 @@
 module.exports.greet = function(){
-    console.log("Greet 2");
+  console.log("Greet2: Hello World!");
+  //return "Greet 2 : returns a string";
 };
